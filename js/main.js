@@ -61,6 +61,30 @@
 
   const parallaxImgs = reduceMotion ? [] : [...document.querySelectorAll('[data-parallax]')];
 
+  // Parallax layers: [data-speed] > 0 lags behind the scroll, < 0 runs ahead.
+  // Each layer rests at its natural position when centred in the viewport
+  // (or at the top of the page, for layers that start in the first screen).
+  const layerMq = window.matchMedia('(min-width: 900px)');
+  const layers = reduceMotion ? [] : [...document.querySelectorAll('[data-speed]')].map((el) => ({
+    el,
+    speed: parseFloat(el.dataset.speed) || 0,
+    rest: 0,
+  }));
+
+  const docTop = (el) => {
+    let top = 0;
+    for (let n = el; n; n = n.offsetParent) top += n.offsetTop;
+    return top;
+  };
+
+  function measureLayers() {
+    const vh = window.innerHeight;
+    for (const l of layers) {
+      const center = docTop(l.el) + l.el.offsetHeight / 2;
+      l.rest = center < vh ? 0 : center - vh / 2;
+    }
+  }
+
   function onScroll() {
     const y = window.scrollY;
     const vh = window.innerHeight;
@@ -81,8 +105,14 @@
       if (box.bottom < -100 || box.top > vh + 100) continue;
       const factor = parseFloat(img.dataset.parallax) || 0.05;
       const offset = (box.top + box.height / 2 - vh / 2) * -factor;
-      const limit = box.height * 0.055;
+      const limit = box.height * 0.09;
       img.style.setProperty('--py', `${clamp(offset, -limit, limit).toFixed(1)}px`);
+    }
+
+    // Parallax layers (desktop only — stacked mobile layouts would overlap)
+    for (const l of layers) {
+      const offset = layerMq.matches ? (y - l.rest) * l.speed : 0;
+      l.el.style.setProperty('--sy', `${offset.toFixed(1)}px`);
     }
 
     // Statement: light up word by word while scrolling through it
@@ -101,7 +131,11 @@
     requestAnimationFrame(() => { onScroll(); ticking = false; });
   };
   window.addEventListener('scroll', requestScroll, { passive: true });
-  window.addEventListener('resize', requestScroll);
+  const remeasure = () => { measureLayers(); requestScroll(); };
+  window.addEventListener('resize', remeasure);
+  window.addEventListener('load', remeasure);
+  if (document.fonts) document.fonts.ready.then(remeasure);
+  measureLayers();
   onScroll();
 
   /* ------------------------------------------------------------------

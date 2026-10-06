@@ -327,9 +327,9 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .ph__inner img {
   position: absolute;
   left: 0;
-  top: -6%;
+  top: -10%;
   width: 100%;
-  height: 112%;
+  height: 120%;
   object-fit: cover;
   transform: translate3d(0, var(--py, 0px), 0);
   will-change: transform;
@@ -662,6 +662,9 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .is-loaded .tategaki__line { transform: none; }
 .is-loaded .tategaki__sub { clip-path: inset(0 0 0 0); transition-delay: 1.7s; }
 
+/* Parallax layers: `translate` composes with the reveal `transform`s */
+.js [data-speed] { translate: 0 var(--sy, 0px); will-change: translate; }
+
 /* Wordmark letters */
 .js .wordmark .ch { transform: translateY(105%); transition: transform 1.1s var(--ease) calc(var(--i) * 70ms); }
 .js .wordmark.is-in .ch { transform: none; }
@@ -830,4 +833,5 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
     transition-delay: 0s !important;
   }
   .ph__inner img { transform: none !important; }
+  [data-speed] { translate: none !important; }
 }
