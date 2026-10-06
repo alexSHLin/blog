@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alex Lin — Developer &amp; Photographer</title>
+  <meta name="description" content="Alex Lin — a software developer and photography enthusiast based in Taipei, Taiwan.">
+  <meta name="theme-color" content="#F3EFE7">
+  <link rel="icon" href="assets/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+      <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+      <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <!-- Nav -->
+  <header class="nav" id="nav">
+    <div class="nav__inner wrap">
+      <a class="brand" href="#top" aria-label="Alex Lin — back to top">
+        <img class="brand__logo" src="assets/images/logo.png" alt="" width="53" height="69">
+        <span class="brand__text">
+          <span class="brand__name">Alex Lin</span>
+          <span class="brand__meta">写真 と 開発</span>
+        </span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#works" data-spy="works"><span class="num">01</span><span class="lbl">Works</span></a>
+        <a href="#about" data-spy="about"><span class="num">02</span><span class="lbl">About</span></a>
+        <a href="#film" data-spy="film"><span class="num">03</span><span class="lbl">Portfolio</span></a>
+        <a href="#contact" data-spy="contact"><span class="num">04</span><span class="lbl">Contact</span></a>
+      </nav>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="menu-btn__label">MENU</span>
+        <svg class="icon icon--menu"><use href="#i-menu"/></svg>
+        <svg class="icon icon--close"><use href="#i-x"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__links wrap" aria-label="Mobile">
+      <a href="#works"><span class="num">01</span>Works</a>
+      <a href="#about"><span class="num">02</span>About</a>
+      <a href="#film"><span class="num">03</span>Portfolio</a>
+      <a href="#contact"><span class="num">04</span>Contact</a>
+    </nav>
+    <div class="menu__foot wrap">
+      <span class="meta">写真 と 開発</span>
+      <a class="meta" href="mailto:alex1923@gmail.com">alex1923@gmail.com</a>
+    </div>
+  </div>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero wrap" aria-label="Introduction">
+      <p class="meta hero__meta">PORTFOLIO — VOL. 01 — 2026</p>
+
+      <div class="hero__headline">
+        <h1 class="hero__lines">
+          <span class="line line--1"><span>Hello, I am</span></span>
+          <span class="line line--2"><span>Alex Lin,</span></span>
+          <span class="line line--3"><span>a Developer &amp; Photographer.</span></span>
+        </h1>
+        <span class="rule" aria-hidden="true"></span>
+        <p class="hero__intro">I'm a software developer and a photography enthusiast.</p>
+        <a class="cta link-line" href="#works">
+          View the works
+          <svg class="icon"><use href="#i-arrow-down"/></svg>
+        </a>
+      </div>
+
+      <dl class="facts">
+        <div class="fact"><dt>BASED IN</dt><dd>Taipei, Taiwan</dd></div>
+        <div class="fact"><dt>SHOOTING ON</dt><dd>35mm · Film &amp; Digital</dd></div>
+        <div class="fact"><dt>STATUS</dt><dd>Open to commissions</dd></div>
+      </dl>
+
+      <div class="tategaki" aria-hidden="true">
+        <span class="tategaki__main">光を待つ人</span>
+        <span class="tategaki__line"></span>
+        <span class="tategaki__sub">一期一会</span>
+      </div>
+
+      <figure class="hero__photo ph">
+        <div class="ph__inner">
+          <img src="assets/images/hero.jpg" alt="White daisies against a clear blue sky" data-parallax="0.08" fetchpriority="high">
+        </div>
+      </figure>
+    </section>
+
+    <!-- Contact sheet / film strip carousel -->
+    <section class="sheet" id="film" aria-roledescription="carousel" aria-label="Film contact sheet">
+      <div class="wrap sheet__wrap">
+        <div class="sheet__head" data-reveal>
+          <p class="meta">Nikon F4 — KODAK<span class="hide-sm"> — Film</span></p>
+          <p class="meta meta--dim"><span class="hide-sm">フィルム · </span>36 EXP · ISO 400</p>
+        </div>
+
+        <div class="strip" data-reveal>
+          <span class="sprockets" aria-hidden="true"></span>
+          <div class="strip__viewport" tabindex="0" aria-label="Film frames — use arrow keys or swipe">
+            <ul class="strip__track">
+              <li class="frame"><img src="assets/images/film-01.jpg" alt="Film frame 12A" draggable="false" loading="lazy"></li>
+              <li class="frame"><img class="crop-top" src="assets/images/film-02.jpg" alt="Film frame 13A" draggable="false" loading="lazy"></li>
+              <li class="frame"><img src="assets/images/film-03.jpg" alt="Film frame 14A" draggable="false" loading="lazy"></li>
+              <li class="frame"><img src="assets/images/film-04.jpg" alt="Film frame 15A" draggable="false" loading="lazy"></li>
+              <li class="frame"><img src="assets/images/film-05.jpg" alt="Film frame 16A" draggable="false" loading="lazy"></li>
+            </ul>
+          </div>
+          <span class="sprockets" aria-hidden="true"></span>
+        </div>
+
+        <div class="numbers" aria-hidden="true">
+          <ol class="numbers__track">
+            <li><b>12A</b><span>▸ 12</span></li>
+            <li><b>13A</b><span>▸ 13</span></li>
+            <li><b>14A</b><span>▸ 14</span></li>
+            <li><b>15A</b><span>▸ 15</span></li>
+            <li><b>16A</b><span>▸ 16</span></li>
+          </ol>
+        </div>
+
+        <div class="sheet__controls">
+          <div class="sheet__status">
+            <span class="sheet__count"><b data-current>01</b> / <span data-total>05</span></span>
+            <span class="sheet__bar" aria-hidden="true"><span></span></span>
+          </div>
+          <div class="sheet__buttons">
+            <span class="meta meta--dim sheet__hint">SWIPE</span>
+            <button class="sheet__btn" type="button" data-prev aria-label="Previous frame"><svg class="icon"><use href="#i-arrow-left"/></svg></button>
+            <button class="sheet__btn" type="button" data-next aria-label="Next frame"><svg class="icon"><use href="#i-arrow-right"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Works -->
+    <section class="works wrap" id="works">
+      <header class="works__head">
+        <div class="title-group" data-reveal>
+          <span class="kanji" aria-hidden="true">作品</span>
+          <div class="titles">
+            <p class="meta">SELECTED SERIES</p>
+            <h2>Through my lens</h2>
+          </div>
+        </div>
+        <p class="works__sub" data-reveal style="--d:.15s">A few photo series shot between lines of code — streets, animal, strangers, and the lake.</p>
+      </header>
+
+      <div class="works__row works__row--1">
+        <article class="series series--1">
+          <figure class="ph" data-reveal="photo"><div class="ph__inner"><img src="assets/images/works-01.jpg" alt="Close-up of a dachshund's face" data-parallax="0.05" loading="lazy"></div></figure>
+          <div class="caption" data-reveal>
+            <span class="caption__no">01</span>
+            <div class="caption__text">
+              <h3>Dachshund</h3>
+              <p>The photo uses a close-up and shallow depth of field technique, keeping the visual focus entirely on the dog's face and clear eyes, while the background is softly blurred.</p>
+            </div>
+          </div>
+        </article>
+        <article class="series series--2">
+          <figure class="ph" data-reveal="photo"><div class="ph__inner"><img src="assets/images/works-02.jpg" alt="A multi-tiered Japanese castle framed by pine trees" data-parallax="0.05" loading="lazy"></div></figure>
+          <div class="caption" data-reveal>
+            <span class="caption__no">02</span>
+            <div class="caption__text">
+              <h3>A traditional Japanese castle</h3>
+              <p>In the center of the frame is a multi-tiered Japanese castle keep featuring white exterior walls and dark tiled roofs, situated atop a massive stone foundation (ishigaki) built from large rocks.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="works__row works__row--2">
+        <article class="series series--3">
+          <figure class="ph" data-reveal="photo"><div class="ph__inner"><img src="assets/images/works-03.jpg" alt="Rows of colorful ema-style wish tags" data-parallax="0.05" loading="lazy"></div></figure>
+          <div class="caption" data-reveal>
+            <span class="caption__no">03</span>
+            <div class="caption__text">
+              <h3>Ema-style wish tags</h3>
+              <p>The photo uses a shallow depth of field. The plaques in the center are sharp, while the foreground at the left edge and the distant rows on the right are softly blurred. The diagonal composition of the rails leads the eye along the rows. The overall mood is lively and colorful, and it is also personal, since each tag is someone's private hope.</p>
+            </div>
+          </div>
+        </article>
+        <article class="series series--4">
+          <figure class="ph" data-reveal="photo"><div class="ph__inner"><img src="assets/images/works-04.jpg" alt="A white rowboat moored at a lakeside pier" data-parallax="0.05" loading="lazy"></div></figure>
+          <div class="caption" data-reveal>
+            <span class="caption__no">04</span>
+            <div class="caption__text">
+              <h3>A calm lake on a bright, clear day</h3>
+              <p>This is a tranquil lakeside boat rental dock. In the foreground, a white rowboat—its paintwork weathered and mottled, featuring a red heart painted on the side—is moored beside a gray wooden pier. The boat’s reflection shimmers in the blue-green water; the far shore is lined with lush pine and broad-leaved trees, set against a backdrop of blue sky and expansive white clouds. The overall atmosphere is fresh and serene, characterized by vivid colors.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="about__grid wrap">
+        <div class="about__photo">
+          <figure class="ph portrait" data-reveal="photo">
+            <div class="ph__inner"><img src="assets/images/portrait.jpg" alt="Black and white sketch-style portrait of Alex Lin" loading="lazy"></div>
+            <img class="portrait__logo" src="assets/images/logo.png" alt="" width="53" height="69" loading="lazy">
+          </figure>
+          <div class="portrait__caption" data-reveal>
+            <span class="meta meta--ink">SELF — TAIPEI</span>
+            <span class="meta">50mm&nbsp;&nbsp;f/1.8</span>
+          </div>
+        </div>
+
+        <div class="about__text">
+          <div class="eyebrow" data-reveal>
+            <span class="eyebrow__kanji">私について</span>
+            <span class="eyebrow__line"></span>
+            <span class="meta">ABOUT</span>
+          </div>
+
+          <div class="name-block" data-reveal>
+            <h2>Alex Lin</h2>
+            <p>Software Developer &amp; Photographer</p>
+          </div>
+
+          <p class="statement" data-words>By day I write clean, reliable code that turns ideas into working products. Off the clock, I chase light with a camera — both crafts are about noticing the details.</p>
+
+          <dl class="details" data-reveal>
+            <div class="detail"><dt>BASED IN</dt><dd>Taipei, Taiwan</dd></div>
+            <div class="detail"><dt>PROFESSION</dt><dd>Software Development</dd></div>
+            <div class="detail"><dt>ALSO PRACTICE</dt><dd>Photography · Painting</dd></div>
+            <div class="detail"><dt>CAMERAS</dt><dd>SONY A7M3 · Nikon F4</dd></div>
+            <div class="detail"><dt>BUILT WITH TEAMS AT</dt><dd>Freelancer</dd></div>
+          </dl>
+
+          <div class="toolkit">
+            <div class="eyebrow" data-reveal>
+              <span class="eyebrow__kanji">技能</span>
+              <span class="eyebrow__line"></span>
+              <span class="meta">TOOLKIT</span>
+            </div>
+            <ol class="toolkit__groups">
+              <li data-reveal><span class="toolkit__no">01</span><div><span class="meta">PROGRAMMING</span><p>Lotus Notes · Python · Java</p></div></li>
+              <li data-reveal style="--d:.06s"><span class="toolkit__no">02</span><div><span class="meta">DATABASES</span><p>MySQL · Oracle</p></div></li>
+              <li data-reveal style="--d:.12s"><span class="toolkit__no">03</span><div><span class="meta">WEB</span><p>HTML · JavaScript · CSS</p></div></li>
+              <li data-reveal style="--d:.18s"><span class="toolkit__no">04</span><div><span class="meta">OFFICE</span><p>PowerPoint · Word · Keynote · Excel</p></div></li>
+              <li data-reveal style="--d:.24s"><span class="toolkit__no">05</span><div><span class="meta">DESIGN &amp; OTHER</span><p>Figma · Axure · Photoshop</p></div></li>
+            </ol>
+          </div>
+
+          <div class="about__links" data-reveal>
+            <a class="link-line" href="#" target="_blank" rel="noopener">Instagram<svg class="icon"><use href="#i-arrow-up-right"/></svg></a>
+            <a class="link-line" href="https://github.com/alexSHLin" target="_blank" rel="noopener">GitHub<svg class="icon"><use href="#i-arrow-up-right"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="wrap">
+      <div class="footer__top">
+        <div class="invite">
+          <div class="eyebrow eyebrow--dark" data-reveal>
+            <span class="eyebrow__kanji">連絡</span>
+            <span class="eyebrow__line"></span>
+            <span class="meta">CONTACT</span>
+          </div>
+          <h2 class="invite__headline" data-reveal style="--d:.08s">Have a project, a question, or a quiet place worth photographing? Let’s talk.</h2>
+          <a class="email" href="mailto:alex1923@gmail.com" data-reveal style="--d:.16s">
+            <span>alex1923@gmail.com</span>
+            <svg class="icon"><use href="#i-arrow-up-right"/></svg>
+          </a>
+        </div>
+
+        <div class="index" data-reveal style="--d:.2s">
+          <div class="index__col">
+            <span class="meta">INDEX</span>
+            <a href="#works">Works</a>
+            <a href="#about">About</a>
+            <a href="#film">Portfolio</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="index__col">
+            <span class="meta">ELSEWHERE</span>
+            <a href="#" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://github.com/alexSHLin" target="_blank" rel="noopener">GitHub</a>
+            <a href="#" target="_blank" rel="noopener">Unsplash</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="wordmark" data-chars aria-label="Arigatō — thank you">ありがとう。</p>
+
+      <div class="bottom">
+        <span class="meta">© 2026 ALEX LIN</span>
+        <span class="meta">25.03°N&nbsp;&nbsp;121.56°E — TAIPEI</span>
+        <span class="meta">SHOT ON FILM, BUILT WITH CODE</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
