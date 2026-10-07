@@ -22,9 +22,12 @@
   --dim-2: #8A8378;
   --sheet-text: #B8B0A2;
 
-  --f-serif: "Shippori Mincho", "Hiragino Mincho ProN", serif;
-  --f-sans: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
-  --f-mono: "IBM Plex Mono", ui-monospace, monospace;
+  /* Latin first, then Japanese, then Traditional Chinese */
+  --f-serif: "Lora", "Noto Serif TC", serif;
+  --f-sans: "Inter", "LINE Seed JP", "Noto Sans TC", sans-serif;
+  --f-label: "Montserrat", "LINE Seed JP", "Noto Sans TC", sans-serif;
+  --f-hand: "Yozai", "Noto Serif TC", serif;
+  --f-round: "Huninn", "Noto Sans TC", sans-serif;
 
   --maxw: 1440px;
   --pad: 64px;
@@ -77,7 +80,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 }
 
 .meta {
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
   font-size: 12px;
   letter-spacing: 1.2px;
   color: var(--faint);
@@ -169,12 +172,12 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .brand:hover .brand__logo { transform: rotate(-6deg); }
 .brand__text { display: flex; flex-direction: column; gap: 2px; }
 .brand__name { font-family: var(--f-serif); font-size: 20px; font-weight: 600; }
-.brand__meta { font-family: var(--f-mono); font-size: 11px; letter-spacing: 2px; color: var(--faint); }
+.brand__meta { font-family: var(--f-label); font-size: 11px; letter-spacing: 2px; color: var(--faint); }
 
 .nav__links { display: flex; align-items: center; gap: 40px; }
 .nav__links a { display: flex; align-items: center; gap: 8px; }
 .nav__links .num {
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
   font-size: 11px;
   letter-spacing: 1.2px;
   color: var(--shu);
@@ -204,7 +207,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   align-items: center;
   gap: 8px;
   height: 44px;
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
   font-size: 11px;
   letter-spacing: 1.2px;
 }
@@ -248,7 +251,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   transition: opacity .5s, transform .6s var(--ease);
 }
 .menu__links a:last-child { border-bottom: 1px solid var(--line); }
-.menu__links .num { font-family: var(--f-mono); font-size: 12px; letter-spacing: 1.2px; color: var(--shu); }
+.menu__links .num { font-family: var(--f-label); font-size: 12px; letter-spacing: 1.2px; color: var(--shu); }
 .menu-open .menu__links a { opacity: 1; transform: none; }
 .menu-open .menu__links a:nth-child(1) { transition-delay: .25s; }
 .menu-open .menu__links a:nth-child(2) { transition-delay: .32s; }
@@ -303,7 +306,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
 .facts { grid-area: facts; display: flex; gap: 40px; }
 .fact { display: flex; flex-direction: column; gap: 6px; }
-.fact dt { font-family: var(--f-mono); font-size: 11px; letter-spacing: 1.2px; color: var(--faint); }
+.fact dt { font-family: var(--f-label); font-size: 11px; letter-spacing: 1.2px; color: var(--faint); }
 .fact dd { font-size: 14px; }
 
 .tategaki {
@@ -313,7 +316,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   align-items: center;
   gap: 20px;
   padding-top: 8px;
-  font-family: var(--f-serif);
+  font-family: var(--f-hand);
 }
 .tategaki__main { writing-mode: vertical-rl; font-size: 26px; letter-spacing: 9px; }
 .tategaki__line { width: 1px; height: 120px; background: var(--line); transform-origin: top; }
@@ -416,9 +419,10 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   display: flex;
   gap: 10px;
   flex: 0 0 calc((100% - (var(--per) - 1) * var(--gap)) / var(--per));
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
   font-size: 12px;
   letter-spacing: 1.2px;
+  font-variant-numeric: tabular-nums;
   color: var(--dim);
   transition: color .6s;
 }
@@ -426,7 +430,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .numbers__track li.is-current span { color: var(--sheet-text); }
 
 .sheet__controls { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.sheet__status { display: flex; align-items: center; gap: 16px; font-family: var(--f-mono); font-size: 12px; letter-spacing: 1.2px; color: var(--dim); }
+.sheet__status { display: flex; align-items: center; gap: 16px; font-family: var(--f-label); font-size: 12px; letter-spacing: 1.2px; font-variant-numeric: tabular-nums; color: var(--dim); }
 .sheet__count b { font-weight: 400; color: var(--sheet-text); }
 .sheet__bar { position: relative; width: 120px; height: 1px; background: var(--dark-line); overflow: hidden; }
 .sheet__bar span { position: absolute; inset: 0; background: var(--shu-light); transform: scaleX(0); transform-origin: left; }
@@ -483,7 +487,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .series:hover .ph__inner { transform: scale(1.03); }
 
 .caption { display: flex; gap: 20px; }
-.caption__no { padding-top: 10px; font-family: var(--f-mono); font-size: 13px; letter-spacing: 1.2px; color: var(--shu); }
+.caption__no { padding-top: 10px; font-family: var(--f-label); font-size: 13px; letter-spacing: 1.2px; color: var(--shu); }
 .caption__text { display: flex; flex-direction: column; gap: 8px; }
 .caption h3 { font-family: var(--f-serif); font-size: 26px; font-weight: 500; line-height: 1.45; }
 .caption p { font-size: 15px; line-height: 1.7; color: var(--muted); }
@@ -531,7 +535,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   border-top: 1px solid var(--line);
 }
 .detail:last-child { border-bottom: 1px solid var(--line); }
-.detail dt { font-family: var(--f-mono); font-size: 12px; letter-spacing: 1.2px; color: var(--faint); }
+.detail dt { font-family: var(--f-label); font-size: 12px; letter-spacing: 1.2px; color: var(--faint); }
 .detail dd { font-size: 16px; }
 
 .toolkit { display: flex; flex-direction: column; gap: 24px; }
@@ -540,7 +544,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .toolkit__groups li > div { display: flex; flex-direction: column; gap: 4px; }
 .toolkit__groups .meta { font-size: 11px; }
 .toolkit__groups p { font-size: 16px; line-height: 1.5; }
-.toolkit__no { font-family: var(--f-mono); font-size: 12px; letter-spacing: 1.2px; color: var(--shu); }
+.toolkit__no { font-family: var(--f-label); font-size: 12px; letter-spacing: 1.2px; color: var(--shu); }
 
 .about__links { display: flex; gap: 32px; }
 
@@ -592,7 +596,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
 .wordmark {
   display: flex;
-  font-family: var(--f-serif);
+  font-family: var(--f-hand);
   font-size: clamp(46px, 13.9vw, 200px);
   line-height: 1;
   color: var(--dark-word);
